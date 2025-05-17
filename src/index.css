@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+ul
+{
+  list-style-type:none;
+}
+
+body
+{
+  margin: 0;
+  padding: 0;
+}
+
+.addCart-button, .checkout-button
+{
+  transition: .3s .15s var(--ease-in-out);
+}
+.addCart-button:hover, .checkout-button:hover
+{
+    transform: scale(1.1) translateY(-0.25rem);
+}
+nav{
+  box-shadow: 0 2px 12px #00000029;
+}
+
+/*Scrolling is done with a smooth animation.*/
+html {
+  scroll-behavior: smooth;
+}
