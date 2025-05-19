@@ -2,6 +2,6 @@ import { updateProductQuantity } from "@/features/Cart/utils/updateProductQuanti
 import { ProductQuantityChange } from "@/features/Cart/types/Cart";
 
 export const increaseQuantity = ({setCart, id}: ProductQuantityChange) => {
-    setCart((prevCart) => updateProductQuantity({cart: prevCart, id, change: 1}));
+    setCart((prevCart) => updateProductQuantity({cart: prevCart, id, quantityChange: 1}));
 };
     

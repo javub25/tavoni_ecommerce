@@ -21,11 +21,11 @@ export const CartProducts = ({cart, setCart}: CartContextProps) =>
                             </li>
                             <li className="flex-1">
                                 <h3 className="font-medium">{title}</h3>
-                                <p className="text-sm text-gray-500 mt-1">{price}€</p>
+                                <p className="text-sm text-[#020618] mt-1">{price}€</p>
                                 <ul className="flex items-center justify-between mt-4 w-34">
                                     <li className="flex items-center border rounded-md w-20 my-2">
                                         <ProductQuantityCounter 
-                                            currentQuantity={quantity} 
+                                            quantity={quantity} 
                                             onIncrease={() => increaseQuantity({setCart, id})}
                                             onDecrease={() => decreaseQuantity({setCart, id})}
                                         />
@@ -35,9 +35,7 @@ export const CartProducts = ({cart, setCart}: CartContextProps) =>
                                     </li>
                                 </ul>                              
                             </li>
-                            <li>
-                                <span className="font-medium">{price}€</span>
-                            </li>
+                            
                         </ul>  
                     </div>
                 );
