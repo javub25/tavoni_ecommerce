@@ -1,13 +1,14 @@
 import { UpdateProductQuantityProps } from "@/features/Cart/types/Cart";
+import { createUpdatedProduct } from "@/features/Cart/utils/createUpdatedProduct.ts";
 
-export const updateProductQuantity = ({cart, id, change}: UpdateProductQuantityProps) => {
-  
+export const updateProductQuantity = ({cart, id, quantityChange}: UpdateProductQuantityProps) => {
+
   return cart.map((product) => {
+
+    const {quantity, price} = product;
 
      if (product.id!== id) return product;
 
-      const newQuantity = Math.max(1, (product.quantity ?? 1) + change);
-
-      return { ...product, quantity: newQuantity };
+     else return createUpdatedProduct({product, quantityChange, quantity, price});
   });
 }
