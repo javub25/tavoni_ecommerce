@@ -5,19 +5,47 @@ ul
   list-style-type:none;
 }
 
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./assets/fonts/PlusJakartaSans-Medium.woff2') format('woff2'),
+}
+
 body
 {
   margin: 0;
   padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.addCart-button, .checkout-button
+
+.confirmation-button
+{
+    color:white;
+    font-size: 0.875rem;
+    padding: 1rem;
+    background: #000000;
+    border-radius: 0.5rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    width:100%;
+    max-width:280px;
+    margin: 3rem auto 0;
+}
+
+.addCart-button, .checkout-button, .confirmation-button
 {
   transition: .3s .15s var(--ease-in-out);
 }
-.addCart-button:hover, .checkout-button:hover
+.addCart-button:hover, .checkout-button:hover, .confirmation-button:hover
 {
     transform: scale(1.1) translateY(-0.25rem);
+    box-shadow: 0 14px 15px #00000029;
 }
 nav{
   box-shadow: 0 2px 12px #00000029;
