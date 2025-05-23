@@ -41,6 +41,30 @@ npm run preview
 
 <br/>
 
+## Dessign Pattern ♻️
+
+Adapter pattern to extract only properties needed from products store.
+
+
+## Lazy loading 📉
+
+
+To improve performance I implemented:
+
+
+1) Carrousel images using <b>loading="lazy"</b> attribute.
+
+    - The first image in the carousel is loaded with <b>loading="eager" and fetchPriority="high"</b> to make sure is rendered immediately. <br/>
+
+    - The next two images are loaded as eager. <br/>
+
+    - Remaining images use <b>loading="lazy"</b> to optimize resource usage.
+
+    <br/>
+
+2) Store and Cart routes
+
+
 ## 🧪 Testing Section ##
 
 
