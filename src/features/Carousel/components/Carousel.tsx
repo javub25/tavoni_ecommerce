@@ -18,7 +18,7 @@ export const Carousel = ({setProductInfo, setIsVisible}: CarouselType) => {
             <article className="carrousel">
                 <div className="carrousel__viewport"  ref={emblaRef}>
                     <div className="carrousel__items">
-                        {products.map((product: Product) => {
+                        {products.map((product: Product, index) => {
                             const {id, title, images: [image], category} = product;
                             
                                 addInitialProductQty(product);
@@ -28,7 +28,10 @@ export const Carousel = ({setProductInfo, setIsVisible}: CarouselType) => {
                                         <div className="w-[100px] h-[50px] ml-auto bg-black text-white p-3 rounded-full text-center">
                                             {category}
                                         </div>    
-                                        <img src={image} alt={title} className="mx-auto w-[280px] h-[280px]"/>
+                                        <img src={image} alt={title} className="mx-auto w-[280px] h-[280px]" 
+                                            loading={index < 3 ? "eager" : "lazy"}
+                                            fetchPriority={index === 0 ? "high" : "auto"}
+                                        />
                                         <h1 className="text-black text-md font-bold text-center mt-4">{title}</h1>
                                         <ProductInfoButton setProductInfo={setProductInfo} product={product} setIsVisible={setIsVisible}/>
                                         <p className="text-base grey-800 mt-7 text-right">{id} / {products.length}</p>

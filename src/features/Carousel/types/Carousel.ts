@@ -3,7 +3,7 @@ import { Product } from "@/features/Store/types/Product"
 import type { EmblaViewportRefType } from "embla-carousel-react"
 import type { EmblaCarouselType } from "embla-carousel"
 
-type BooleanFunction = (value: boolean) => void
+export type BooleanFunction = (value: boolean) => void
 type CarouselFunction = (value: EmblaCarouselType) => void
 type CarouselValue = EmblaCarouselType | undefined;
 
