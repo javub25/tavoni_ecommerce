@@ -7,7 +7,7 @@ import { useVisible } from "@/features/Store/hooks/useVisible";
 import { Loader } from "@/features/Store/components/Loader";
 import { ProductInfo } from "@/features/Store/components/ProductInfo";
 
-export const Store = () => 
+const Store = () => 
 {
     const {loading} = useProducts();
     const {setCart} = useCartContext();
@@ -28,3 +28,4 @@ export const Store = () =>
         </>    
     )
 }
+export default Store;

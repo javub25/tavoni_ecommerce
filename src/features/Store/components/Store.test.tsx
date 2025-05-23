@@ -1,6 +1,6 @@
 import { render, screen} from "@testing-library/react";
-import { Store } from "@/features/Store/components/Store";
-import { Cart } from "@/features/Cart/components/Cart";
+import Store from "@/features/Store/components/Store";
+import Cart from "@/features/Cart/components/Cart";
 import { CartProvider } from "@/contexts/Cart-context";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";

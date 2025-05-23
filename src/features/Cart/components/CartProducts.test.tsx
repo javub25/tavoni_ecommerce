@@ -4,12 +4,20 @@ import {render, screen} from "@testing-library/react";
 import {CartProducts} from "@/features/Cart/components/CartProducts.tsx";
 import "@testing-library/jest-dom";
 
+const getFakeFunction = () => jest.fn();
+
+const getFakeConfirmation = () => 
+{
+    const mockConfirmation = getFakeFunction();
+    return {mockConfirmation};
+}
 
 const getFakeCart = () => 
 {
-    const mockCart = jest.fn();
+    const mockCart = getFakeFunction();
     return {mockCart};
 }
+
 
 const getTotalPrice = () => 
 {
@@ -44,11 +52,16 @@ const showCartProducts = () =>
 {
     const {mockCart} = getFakeCart();
     const {mockProducts} = getFakeProducts();
+    const {mockConfirmation} = getFakeConfirmation();
+
     
     render (
-        <CartProducts cart={mockProducts} setCart={mockCart} />
+        <CartProducts cart={mockProducts} setCart={mockCart} 
+            setOrderConfirmation={mockConfirmation} 
+        />
     )
 }
+
 
 test("it should to be the total price 300 euros", () => 
 {
@@ -58,3 +71,4 @@ test("it should to be the total price 300 euros", () =>
 
     expect(priceValue).toHaveTextContent("300.00€");
 })
+
