@@ -1,12 +1,12 @@
-import { CartContextProps } from "@/features/Cart/types/Cart.ts";
-import { TotalPrice } from "@/features/Cart/components/TotalPrice.tsx";
+import {CartProductsProps} from "@/features/Cart/types/Cart.ts";
+import {TotalPrice} from "@/features/Cart/components/TotalPrice.tsx";
 import { RemoveCartButton } from "@/features/Cart/components/RemoveCartButton.tsx";
-import { Checkout } from "@/features/Cart/components/Checkout.tsx";
+import {Checkout} from "@/features/Cart/components/Checkout.tsx";
 import { ProductQuantityCounter } from "@/features/Cart/components/ProductQuantityCounter.tsx";
 import { increaseQuantity } from "@/features/Cart/utils/increaseQuantity.ts";
 import { decreaseQuantity } from "@/features/Cart/utils/decreaseQuantity.ts";
 
-export const CartProducts = ({cart, setCart}: CartContextProps) => 
+export const CartProducts = ({cart, setCart, setOrderConfirmation}: CartProductsProps) => 
 {
     return (
         <>
@@ -41,7 +41,7 @@ export const CartProducts = ({cart, setCart}: CartContextProps) =>
                 );
             })}
             <TotalPrice cart={cart} />
-            <Checkout />
+            <Checkout setOrderConfirmation={setOrderConfirmation}/>
         </>
     )
 }

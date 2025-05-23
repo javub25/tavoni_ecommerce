@@ -1,4 +1,5 @@
 import { Product , Products} from "@/features/Store/types/Product";
+import {BooleanFunction} from "@/features/Carousel/types/Carousel.ts"
 
 type QuantitySetter = () => void;
 type WithCart = {
@@ -23,6 +24,10 @@ type WithProductQuantity =
     quantityChange: number;
     newQuantity: number;
 }
+type WithOrderConfirmation = {
+    orderConfirmation: boolean;
+    setOrderConfirmation: BooleanFunction;
+}
 
 export type CartProps = Pick<WithCart, "setCart"> & WithProduct;
 
@@ -41,8 +46,14 @@ export type ProductQuantityCounterProps = Pick<WithProductQuantity, "quantity"> 
 
 export type ProductPriceProps = WithProductQuantity & WithProductPrice;
 
-export type ProductNewQuantityProps = Pick<WithProductQuantity, "quantity" | "quantityChange">
+export type ProductNewQuantityProps = Omit<WithProductQuantity, "newQuantity">
 
-export type ProductNewPriceProps = WithProductPrice & Pick<WithProductQuantity, "quantity" | "newQuantity">
+export type ProductNewPriceProps = WithProductPrice & Omit<WithProductQuantity, "quantityChange">
 
-export type ProductQuantityUpdated = WithProduct & Pick<WithProductQuantity, "quantity" | "quantityChange"> & WithProductPrice;
+export type ProductQuantityUpdated = WithProduct & Omit<WithProductQuantity, "newQuantity"> & WithProductPrice;
+
+export type OrderStepsProps = WithCart & WithOrderConfirmation;
+
+export type CartProductsProps = WithCart & Pick<WithOrderConfirmation, "setOrderConfirmation">
+
+export type OrderConfirmationProp = Pick<WithOrderConfirmation, "setOrderConfirmation">

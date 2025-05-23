@@ -1,9 +1,11 @@
-export const Checkout = () => 
+import { OrderConfirmationProp } from "@/features/Cart/types/Cart"
+import arrowRight from "@/features/Cart/assets/img/arrow-right.svg"
+
+export const Checkout = ({setOrderConfirmation}: OrderConfirmationProp) => 
 {
     return (
-        <button className="checkout-button bg-[#dc2626] text-sm hover:bg-[#b91c1c] max-w-[90px] rounded-lg text-white flex items-center justify-center 
-            gap-2 p-3 cursor-pointer mt-6 ml-auto">
-            Checkout
+        <button className="confirmation-button" onClick={() => setOrderConfirmation(true)}>
+            Checkout <img src={arrowRight} alt="Proceed to Checkout" className="w-4 h-4 pulse animate-pulse"/>
         </button>
     )
 }

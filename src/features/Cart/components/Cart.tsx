@@ -1,9 +1,11 @@
 import { useCartContext } from "@/contexts/Cart-context.tsx";
-import { CartProducts } from "@/features/Cart/components/CartProducts.tsx";
+import { useOrderConfirmation } from "@/features/Cart/hooks/useOrderConfirmation";
+import { OrderSteps } from "@/features/Cart/components/OrderSteps";
 
-export const Cart = () => 
+const Cart = () => 
 {
     const {cart, setCart} = useCartContext();
+    const {orderConfirmation, setOrderConfirmation} = useOrderConfirmation();
 
     return (
         <article className="max-w-lg mx-auto shadow-lg p-8 rounded-md">
@@ -12,8 +14,11 @@ export const Cart = () =>
             {cart.length === 0 ? (
                 <p className="text-lg text-black mt-8 text-center mb-6">Your cart is empty</p>
             ): (
-                <CartProducts cart={cart} setCart={setCart}/>
+                <OrderSteps cart={cart} setCart={setCart} 
+                    setOrderConfirmation={setOrderConfirmation} orderConfirmation={orderConfirmation}
+                />
             )}
         </article>
     )
 }
+export default Cart;
