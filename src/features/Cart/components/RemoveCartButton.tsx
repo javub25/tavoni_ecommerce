@@ -1,5 +1,5 @@
 import trash from "@/assets/img/trash.svg";
-import { removeProductFromCart } from "@/features/Cart/utils/removeProductFromCart";
+import { removeProductFromCart } from "@/features/Cart/utils/cart/removeProductFromCart";
 import { CartProps } from "@/features/Cart/types/Cart";
 
 export const RemoveCartButton = ({product, setCart}: CartProps) =>

@@ -1,5 +1,5 @@
 import { UpdateProductQuantityProps } from "@/features/Cart/types/Cart";
-import { createUpdatedProduct } from "@/features/Cart/utils/createUpdatedProduct.ts";
+import { createUpdatedProduct } from "@/features/Cart/utils/products/createUpdatedProduct";
 
 export const updateProductQuantity = ({cart, id, quantityChange}: UpdateProductQuantityProps) => {
 
