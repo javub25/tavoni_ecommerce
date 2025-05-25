@@ -1,6 +1,6 @@
 import { ProductQuantityUpdated } from "@/features/Cart/types/Cart";
-import { calculateTotalPrice } from "@/features/Cart/utils/calculateTotalPrice";
-import { calculateNewQuantity } from "@/features/Cart/utils/calculateNewQuantity";
+import { calculateTotalPrice } from "@/features/Cart/utils/products/calculateTotalPrice";
+import { calculateNewQuantity } from "@/features/Cart/utils/products/calculateNewQuantity";
 
 export const createUpdatedProduct = ({product, quantity, quantityChange, price}: ProductQuantityUpdated) => 
 {

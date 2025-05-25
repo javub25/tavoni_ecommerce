@@ -1,6 +1,6 @@
 import { OrderConfirmationProp } from "@/features/Cart/types/Cart";
-import { getRandomOrderNumber } from "@/features/Cart/utils/getRandomOrderNumber";
-import { getOrderDate } from "@/features/Cart/utils/getOrderDate";
+import { getRandomOrderNumber } from "@/features/Cart/utils/order/getRandomOrderNumber";
+import { getOrderDate } from "@/features/Cart/utils/order/getOrderDate";
 import { OrderSuccessConfetti } from "@/features/Confetti/components/OrderSuccessConfetti";
 import greenCheck from "@/features/Cart/assets/img/green-check.svg";
 import shoppingBag from "@/features/Cart/assets/img/shopping-bag.svg";

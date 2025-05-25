@@ -2,11 +2,13 @@ import shoppingCart from "@/features/Cart/assets/img/shopping-cart.svg"
 import store from "@/features/Store/assets/img/store.svg"
 import {Link} from "react-router"
 import { useCartContext } from "@/contexts/Cart-context";
+import { useLocalStorage } from "@/features/Cart/hooks/useLocalStorage";
 
 
 export const Header = () => {
 
-    const {cart} = useCartContext();
+    const {cart, setCart} = useCartContext();
+    useLocalStorage({cart, setCart});
 
     return (
         <header className="sticky top-0 z-20 bg-white">

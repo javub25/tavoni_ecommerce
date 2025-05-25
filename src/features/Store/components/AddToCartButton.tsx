@@ -1,5 +1,5 @@
 import shoppingCart from "@/features/Cart/assets/img/shopping-cart-white.svg"
-import { addProductToCart } from "@/features/Cart/utils/addProductToCart.ts";
+import { addProductToCart } from "@/features/Cart/utils/cart/addProductToCart";
 import { AddCartProps } from "@/features/Carousel/types/Carousel";
 
 export const AddToCartButton = ({setCart, product}: AddCartProps) => 
