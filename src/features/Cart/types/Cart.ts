@@ -2,7 +2,7 @@ import { Product , Products} from "@/features/Store/types/Product";
 import {BooleanFunction} from "@/features/Carousel/types/Carousel.ts"
 
 type QuantitySetter = () => void;
-type WithCart = {
+export type WithCart = {
     cart: Products;
     setCart: (updater: (oldProducts: Products) => Products) => void;
 }
@@ -57,3 +57,5 @@ export type OrderStepsProps = WithCart & WithOrderConfirmation;
 export type CartProductsProps = WithCart & Pick<WithOrderConfirmation, "setOrderConfirmation">
 
 export type OrderConfirmationProp = Pick<WithOrderConfirmation, "setOrderConfirmation">
+
+export type CartItems = Pick<WithCart, "cart">

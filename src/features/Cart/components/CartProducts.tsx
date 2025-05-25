@@ -3,11 +3,14 @@ import {TotalPrice} from "@/features/Cart/components/TotalPrice.tsx";
 import { RemoveCartButton } from "@/features/Cart/components/RemoveCartButton.tsx";
 import {Checkout} from "@/features/Cart/components/Checkout.tsx";
 import { ProductQuantityCounter } from "@/features/Cart/components/ProductQuantityCounter.tsx";
-import { increaseQuantity } from "@/features/Cart/utils/increaseQuantity.ts";
-import { decreaseQuantity } from "@/features/Cart/utils/decreaseQuantity.ts";
+import { increaseQuantity } from "@/features/Cart/utils/products/increaseQuantity";
+import { decreaseQuantity } from "@/features/Cart/utils/products/decreaseQuantity";
+import { useLocalStorage } from "@/features/Cart/hooks/useLocalStorage";
 
 export const CartProducts = ({cart, setCart, setOrderConfirmation}: CartProductsProps) => 
 {
+    useLocalStorage({cart, setCart});
+
     return (
         <>
             {cart.map((product) => {
